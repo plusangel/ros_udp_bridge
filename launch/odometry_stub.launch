@@ -1,0 +1,4 @@
+<launch>
+    <rosparam file="$(find nautilus_udp_bridge)/config/params.yaml" command="load" />
+    <node name="odometry_pub_stub_node" pkg="nautilus_udp_bridge" type="odometry_stub_node" output="screen" />
+</launch>
