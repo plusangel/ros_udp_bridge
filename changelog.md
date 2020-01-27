@@ -1,6 +1,9 @@
 # Changelog for ros_udp_server
 
 ## 0.0.4 (27/01/2020)
+Added a launch file a single point of entry for the tests
+
+## 0.0.4 (27/01/2020)
 Added few dependencies
 
 ## 0.0.3 (22/01/2020)
