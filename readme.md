@@ -33,7 +33,7 @@ Run the docker:
 docker run --network host -it bridge:0.0.1
 ```
 
-## compatibility
+## built using
 - Ubuntu Linux 18 (Bionic)
 - ROS melodic
 - Poco library 1.8.0.1
