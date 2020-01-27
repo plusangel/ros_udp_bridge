@@ -1,4 +1,4 @@
 <launch>
-    <include file="$(find nautilus_udp_bridge)/launch/odometry_test.launch"/>
+    <include file="$(find nautilus_udp_bridge)/launch/odometry_stub.launch"/>
     <include file="$(find nautilus_udp_bridge)/launch/bridge.launch"/>
 </launch>

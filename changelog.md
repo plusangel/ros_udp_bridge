@@ -1,5 +1,8 @@
 # Changelog for ros_udp_server
 
+## 0.0.6 (27/01/2020)
+Typo fixed in launch file
+
 ## 0.0.5 (27/01/2020)
 Added a launch file a single point of entry for the tests
 
