@@ -5,6 +5,7 @@ add_compile_options(-std=c++14)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  tf
 )
 
 find_package(Poco REQUIRED COMPONENTS
