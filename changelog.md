@@ -1,5 +1,8 @@
 # Changelog for ros_udp_server
 
+## 0.0.7 (27/01/2020)
+Docker file added
+
 ## 0.0.6 (27/01/2020)
 Typo fixed in launch file
 
