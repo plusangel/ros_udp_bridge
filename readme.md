@@ -24,10 +24,14 @@ if your host ip is that. After opening the connection, we send either 1 (to acti
 
 ## docker
 Build the docker:
+```
 docker build . -t bridge:0.0.1
+```
 
 Run the docker:
+```
 docker run --network host -it bridge:0.0.1
+```
 
 ## compatibility
 - Ubuntu Linux 18 (Bionic)
