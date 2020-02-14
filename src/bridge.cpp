@@ -12,6 +12,7 @@ Bridge::Bridge(const int port) : port{port} {
                              &Bridge::odometry_callback, this);
 
   n.param<int>("/rate", rate, 1);
+  ros::MultiThreadedSpinner spinner(2);
 }
 
 void Bridge::receive(SocketAddress &sender) {
@@ -44,23 +45,25 @@ void Bridge::spin() {
   std::thread receive_thread(&Bridge::receive, this, std::ref(sender));
   ros::Rate spin_rate(rate);
   std::stringstream ss;
-
+  std::string s;
   while (ros::ok()) {
-
-    ss << "{\"timestamp\": " << ros::Time::now() << ", \"x\": " << x
-       << ",\"y\": " << y << ", \"theta\": " << theta << "}";
-    std::string s = ss.str();
-    char cstr[s.size() + 1];
-    strcpy(cstr, s.c_str());
 
     if (transmit) {
       try {
+        ss << "{\"timestamp\": " << ros::Time::now() << ", \"x\": " << x
+           << ",\"y\": " << y << ", \"theta\": " << theta << "}";
+        s = ss.str();
+        ss.str("");
+        char cstr[s.size() + 1];
+        strcpy(cstr, s.c_str());
+
         server->sendTo(cstr, sizeof(cstr), sender);
+        // std::cout << cstr << std::endl;
+
       } catch (Poco::Exception &exc) {
         std::cerr << "UDP Server - cannot send " << exc.displayText()
                   << std::endl;
       }
-      std::cout << x << std::endl;
     }
     ros::spinOnce();
     spin_rate.sleep();

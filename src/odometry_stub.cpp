@@ -29,8 +29,8 @@ int main(int argc, char **argv) {
     msg.pose.pose.orientation.w = 1l;
 
     odometry_demo_pub.publish(msg);
-    ROS_INFO("[%f, %f, %f]", msg.pose.pose.position.x, msg.pose.pose.position.y,
-             msg.pose.pose.orientation.x);
+    //ROS_INFO("[%f, %f, %f]", msg.pose.pose.position.x, msg.pose.pose.position.y,
+    //         msg.pose.pose.orientation.x);
     ros::spinOnce();
     loop_rate.sleep();
   }

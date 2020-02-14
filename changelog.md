@@ -1,5 +1,9 @@
 # Changelog for ros_udp_server
 
+## 0.0.8 (14/01/2020)
+Fixed a major bug with the stringstream
+Added a dumb client for testing
+
 ## 0.0.7 (27/01/2020)
 Docker file added
 

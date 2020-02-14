@@ -37,3 +37,9 @@ target_link_libraries(bridge_node
    Poco::Net
    pthread
 )
+
+add_executable(dump_client src/dumb_client)
+
+target_link_libraries(dump_client
+   Poco::Net
+)

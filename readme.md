@@ -22,6 +22,11 @@ nc -u 192.168.1.220 1234
 ```
 if your host ip is that. After opening the connection, we send either 1 (to activate) or 0 (to shut down)
 
+Or use the integrated dumb client by executing:
+```
+rosrun nautilus_udp_bridge dump_client
+```
+
 ## docker
 Build the docker:
 ```
